@@ -1,5 +1,5 @@
 // List of festivals
-List<String> festivals = [
+List<String> festivalsList = [
   'Diwali',
   'Holi',
   'Navratri',
