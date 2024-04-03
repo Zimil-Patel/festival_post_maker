@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,21 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - 
+    - assets/images/festivals/diwali/
+    - assets/images/festivals/holi/
+    - assets/images/festivals/navratri/
+    - assets/images/festivals/durga pooja/
+    - assets/images/festivals/dussehra/
+    - assets/images/festivals/janmashtami/
+    - assets/images/festivals/ganesh chaturthi/
+    - assets/images/festivals/eid ul fitr/
+    - assets/images/festivals/christmas/
+    - assets/images/festivals/maha shivratri/
+    - assets/images/festivals/rakshabandhan/
+    - assets/images/festivals/onam/
+    - assets/images/festivals/baisakhi/
+    - assets/images/festivals/gurpurab/
+    - assets/images/festivals/makar sankranti/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
