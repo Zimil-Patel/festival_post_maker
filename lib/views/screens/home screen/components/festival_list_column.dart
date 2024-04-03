@@ -23,6 +23,9 @@ class FestivalListColumn extends StatelessWidget {
               child: Container(
                 height: 100,
                 width: screenWidth,
+                margin: EdgeInsets.only(
+                    top: index == 0 ? 14 : 0,
+                    bottom: index == festivalsList.length - 1 ? 14 : 0),
                 alignment: Alignment.center,
                 padding: EdgeInsets.only(
                     right: index % 2 == 0 ? 10 : 0,
@@ -45,9 +48,9 @@ class FestivalListColumn extends StatelessWidget {
                               color: Colors.black.withOpacity(0.5),
                               blurRadius: 5,
                               spreadRadius: 1,
-                            )
+                            ),
                           ],
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(14),
                           gradient: index % 2 == 0
                               ? gradientFromRight
                               : gradientFromLeft,
@@ -62,9 +65,23 @@ class FestivalListColumn extends StatelessWidget {
                                 ? CrossAxisAlignment.end
                                 : CrossAxisAlignment.start,
                             children: [
-                              Text(festivalsList[index]),
+                              //festival Name
                               Text(
-                                  'Create Your ${festivalsList[index]} Template'),
+                                festivalsList[index],
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(
+                                      color: primaryTextColor,
+                                    ),
+                              ),
+                              Text(
+                                'Create Your ${festivalsList[index]} Template',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: Colors.grey),
+                              ),
                             ],
                           ),
                         ),
@@ -100,6 +117,7 @@ class FestivalListColumn extends StatelessWidget {
                               ],
                               image: DecorationImage(
                                 scale: 10,
+                                //festival icon image
                                 image: AssetImage(
                                     'assets/images/icons/img${index + 1}.png'),
                               ),

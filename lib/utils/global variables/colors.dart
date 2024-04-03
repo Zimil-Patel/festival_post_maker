@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 Color primaryColor = const Color(0xff222831);
-Color secondaryColor = const Color(0xff31363F);
+Color secondaryColor = const Color(0xff1c1c1c);
 Color bgColor = const Color(0xffEEEEEE);
+Color primaryTextColor = const Color(0xff76ABAE);
 
 LinearGradient gradientFromRight = LinearGradient(
   colors: [
