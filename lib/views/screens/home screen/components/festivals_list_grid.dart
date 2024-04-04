@@ -29,7 +29,7 @@ class FestivalListGrid extends StatelessWidget {
                   festivalBottomBox(index, context),
                   //category(festival) image in circle
                   circleFestivalIcon(index),
-                  //festival name overlayers
+                  //festival name over layers
                   nameOfFestival(index, context),
                 ],
               ),

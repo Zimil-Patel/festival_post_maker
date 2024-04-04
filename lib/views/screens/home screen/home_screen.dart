@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeigth = MediaQuery.of(context).size.height;
+    textSize = MediaQuery.of(context).textScaler;
     void toggleWidgetState() {
       setState(() {});
     }
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             //title and toggle button
-            festivalListTitle(context, 'Festival list', toggleWidgetState),
+            festivalListTitle(context, 'Festivals', toggleWidgetState),
 
             //festivals lists box
             isListView ? const FestivalListColumn() : const FestivalListGrid(),
