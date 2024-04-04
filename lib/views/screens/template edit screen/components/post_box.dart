@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../utils/global lists/shadow_list.dart';
 import '../../../../utils/global variables/variables.dart';
 
-Column templateViewBox({required PostModel postModel}) {
+Column postBox({required PostModel postModel}) {
   return Column(
     children: [
       const SizedBox(

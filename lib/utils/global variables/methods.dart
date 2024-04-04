@@ -1,4 +1,5 @@
 import 'package:festival_post_maker/models/post_model.dart';
+import 'package:festival_post_maker/views/screens/template%20edit%20screen/template_edit_screen.dart';
 import 'package:festival_post_maker/views/screens/template%20view%20screen/template_view_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,5 +50,10 @@ TextTheme textThemes() {
 
 //navigate to template view screen
 navigateToTemplateView({required BuildContext context,required PostModel postModel}) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => TemplateViewScreen(postModel: postModel,),));
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TemplateViewScreen(postModel: postModel,),));
+}
+
+//navigate to template view screen
+navigateToEditTemplate({required BuildContext context,required PostModel postModel}) {
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TemplateEditScreen(postModel: postModel,),));
 }

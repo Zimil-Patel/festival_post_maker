@@ -12,9 +12,10 @@ Map sampleTextModel = {
   'bottom': 0.0,
   'left': 0.0,
   'right': 0.0,
-  'size': 20.0,
+  'size': 24.0,
   'color': Colors.white,
   'fontWeight': FontWeight.w600,
+  'fontFamily': 'Pacifico',
 };
 
 Map samplePostModel = {

@@ -2,7 +2,7 @@ import 'package:festival_post_maker/utils/global%20lists/model_list.dart';
 import 'package:flutter/material.dart';
 
 class TextModel {
-  String? text;
+  String? text, fontFamily;
   double? top, bottom, left, right;
   double? size;
   Color? color;
@@ -19,6 +19,7 @@ class TextModel {
     this.size,
     this.color,
     this.fontWeight,
+    this.fontFamily,
   });
 
   factory TextModel.setData(Map map) => TextModel(
@@ -30,6 +31,7 @@ class TextModel {
         size: map['size'],
         color: map['color'],
         fontWeight: map['fontWeight'],
+        fontFamily: map['fontFamily'],
       );
 
   refreshList() {

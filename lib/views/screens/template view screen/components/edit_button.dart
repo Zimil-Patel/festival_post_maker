@@ -1,10 +1,12 @@
+import 'package:festival_post_maker/models/post_model.dart';
+import 'package:festival_post_maker/utils/global%20variables/methods.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/global variables/colors.dart';
 import '../../../../utils/global variables/variables.dart';
 
-Column editTemplateButton({required BuildContext context}) {
+Column editTemplateButton({required BuildContext context, required PostModel postModel}) {
   return Column(
     children: [
       const SizedBox(
@@ -16,7 +18,7 @@ Column editTemplateButton({required BuildContext context}) {
           CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-
+              navigateToEditTemplate(context: context, postModel: postModel);
             },
             child: Container(
               height: screenHeight / 16,

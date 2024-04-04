@@ -1,4 +1,5 @@
 import 'package:festival_post_maker/models/post_model.dart';
+import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:festival_post_maker/views/screens/template%20view%20screen/components/template_view_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'components/bottom_decoration.dart';
@@ -27,6 +28,7 @@ class _TemplateViewScreenState extends State<TemplateViewScreen> {
     }
 
     return Scaffold(
+      backgroundColor: bgColor,
       //APP BAR
       appBar: templateAppBar(context: context, togglesState: toggleWidgetState),
 
@@ -39,7 +41,7 @@ class _TemplateViewScreenState extends State<TemplateViewScreen> {
                 templateViewBox(postModel: widget.postModel),
 
                 //Edit button
-                editTemplateButton(context: context),
+                editTemplateButton(context: context, postModel: widget.postModel),
 
 
               ],

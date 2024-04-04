@@ -3,7 +3,7 @@ import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-AppBar templateAppBar({
+AppBar editTemplateAppBar({
   required BuildContext context,
   required final VoidCallback togglesState,
 }) {
@@ -20,25 +20,34 @@ AppBar templateAppBar({
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/home');
         },
-        child: Icon(Icons.arrow_back, color: bgColor,)),
+        child: Icon(Icons.close, color: bgColor,)),
     title: Text(
-      'Template',
+      'Post Maker',
       style: Theme.of(context).textTheme.titleLarge,
     ),
     actions: [
-      downloadButton(),
+      downloadButton(context: context),
     ],
   );
 }
 
 //POST HISTORY VIEW BUTTON
-CupertinoButton downloadButton() {
+CupertinoButton downloadButton({required BuildContext context}) {
   return CupertinoButton(
     padding: const EdgeInsets.only(right: 10),
     onPressed: () {},
-    child: Icon(
-      Icons.save_alt_rounded,
-      color: bgColor,
+    child: Row(
+      children: [
+        Text('Save', style: Theme.of(context).textTheme.bodyLarge,),
+        const SizedBox(
+          width: 8,
+        ),
+        Icon(
+          Icons.save,
+          size: 22,
+          color: bgColor,
+        ),
+      ],
     ),
   );
 }
