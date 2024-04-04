@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class TextModel {
   String? text, fontFamily;
-  double? top, bottom, left, right;
+  double? top, left;
   double? size;
   Color? color;
   FontWeight? fontWeight;
@@ -13,9 +13,7 @@ class TextModel {
   TextModel({
     this.text,
     this.top,
-    this.bottom,
     this.left,
-    this.right,
     this.size,
     this.color,
     this.fontWeight,
@@ -25,9 +23,7 @@ class TextModel {
   factory TextModel.setData(Map map) => TextModel(
         text: map['text'],
         top: map['top'],
-        bottom: map['bottom'],
         left: map['left'],
-        right: map['right'],
         size: map['size'],
         color: map['color'],
         fontWeight: map['fontWeight'],
@@ -37,4 +33,14 @@ class TextModel {
   refreshList() {
     textObjList = textList.map((e) => TextModel.setData(e)).toList();
   }
+
+  TextModel copy() => TextModel(
+        text: text,
+        top: top,
+        left: left,
+        size: size,
+        color: color,
+        fontWeight: fontWeight,
+        fontFamily: fontFamily,
+      );
 }

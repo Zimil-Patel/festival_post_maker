@@ -19,9 +19,17 @@ Column templateViewBox({required PostModel postModel}) {
             width: screenHeight / 2.5,
             decoration: BoxDecoration(
               image: DecorationImage(
+                fit: BoxFit.cover,
                   image: AssetImage(postModel.imgPath!),),
               color: Colors.white,
               boxShadow: boxShadowList,
+            ),
+            child: Container(
+              height: screenHeight / 2.5,
+              width: screenHeight / 2.5,
+              decoration: BoxDecoration(
+                color: postModel.bgColor ?? Colors.transparent,
+              ),
             ),
           ),
         ],

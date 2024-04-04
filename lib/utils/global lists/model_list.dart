@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../../models/post_model.dart';
+
 //text lists in post
 List textList = [];
 
 //post lists in history
-List postList = [];
+List<PostModel> postList = [
+];
 
 Map sampleTextModel = {
   'text': 'This is sample text',
-  'top': 0.0,
-  'bottom': 0.0,
-  'left': 0.0,
-  'right': 0.0,
-  'size': 24.0,
-  'color': Colors.white,
-  'fontWeight': FontWeight.w600,
+  'top': 180.0,
+  'left': 70.0,
+  'size': 30.0,
+  'color': Colors.black,
+  'fontWeight': FontWeight.w700,
   'fontFamily': 'Pacifico',
 };
 

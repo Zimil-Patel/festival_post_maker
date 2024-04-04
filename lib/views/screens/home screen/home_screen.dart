@@ -17,6 +17,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    isBlankTemplate = false;
+    isFromHistory = false;
+    stackIndex = 0;
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
     void toggleWidgetState() {
@@ -44,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       //floating action button
       floatingActionButton:
-          floatingActionButton(toggleState: toggleWidgetState),
+          floatingActionButton(toggleState: toggleWidgetState, context: context),
     );
   }
 }

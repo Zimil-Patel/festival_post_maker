@@ -1,7 +1,4 @@
-import 'package:festival_post_maker/models/post_model.dart';
-import 'package:festival_post_maker/models/text_model.dart';
 import 'package:festival_post_maker/utils/global%20lists/festivals_list.dart';
-import 'package:festival_post_maker/utils/global%20lists/images_paths_list.dart';
 import 'package:festival_post_maker/utils/global%20lists/shadow_list.dart';
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:festival_post_maker/utils/global%20variables/methods.dart';
@@ -9,7 +6,6 @@ import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/global lists/model_list.dart';
 
 class FestivalListColumn extends StatelessWidget {
   const FestivalListColumn({
@@ -25,25 +21,8 @@ class FestivalListColumn extends StatelessWidget {
           (index) => CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
-              textList.add(sampleTextModel);
-
-              //new text model object
-              TextModel textModel = TextModel();
-              textModel.refreshList();
-
-              //new post model object
-              PostModel postModel = PostModel(
-                  festivalName: festivalsList[index],
-                  bgColor: null,
-                  gradient: null,
-                  imgPath: '${imagePathList[index]}img1.png',
-                  textModel: textModel);
-
-              //clear global text list
-              textList.clear();
-
               //navigate with arguments
-              navigateToTemplateView(context: context, postModel: postModel);
+              navigateToTemplateView(context: context, index: index);
             },
             //box of festival name and image
             child: Container(
