@@ -1,17 +1,17 @@
-import 'package:festival_post_maker/utils/global%20lists/text_properties_list.dart';
+import 'package:festival_post_maker/utils/global%20lists/model_list.dart';
 import 'package:flutter/material.dart';
 
-class TextProperties {
-  String? data;
+class TextModel {
+  String? text;
   double? top, bottom, left, right;
   double? size;
   Color? color;
   FontWeight? fontWeight;
 
-  List<TextProperties> textObjList = [];
+  List<TextModel> textObjList = [];
 
-  TextProperties({
-    this.data,
+  TextModel({
+    this.text,
     this.top,
     this.bottom,
     this.left,
@@ -21,8 +21,8 @@ class TextProperties {
     this.fontWeight,
   });
 
-  factory TextProperties.setData(Map map) => TextProperties(
-        data: map['text'],
+  factory TextModel.setData(Map map) => TextModel(
+        text: map['text'],
         top: map['top'],
         bottom: map['bottom'],
         left: map['left'],
@@ -33,6 +33,6 @@ class TextProperties {
       );
 
   refreshList() {
-    textObjList = textList.map((e) => TextProperties.setData(e)).toList();
+    textObjList = textList.map((e) => TextModel.setData(e)).toList();
   }
 }

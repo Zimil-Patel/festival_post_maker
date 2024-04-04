@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
-    textSize = MediaQuery.of(context).textScaler;
     void toggleWidgetState() {
       setState(() {});
     }
