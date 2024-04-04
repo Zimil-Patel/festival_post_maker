@@ -47,6 +47,7 @@ CupertinoButton listViewToggleButton(final VoidCallback toggleState) {
       toggleState();
     },
     child: Icon(
+      size: 28,
       !isListView ? Icons.line_weight_rounded : Icons.grid_view,
       color: primaryColor.withOpacity(0.8),
     ),
