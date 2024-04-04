@@ -18,9 +18,8 @@ Column festivalListTitle(
           children: [
             Text(
               '    $title',
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: primaryColor,
-                    fontSize: screenHeigth / 24,
+              style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                    color: primaryColor.withOpacity(0.6),
                     fontWeight: FontWeight.w900,
                   ),
             ),
@@ -49,7 +48,7 @@ CupertinoButton listViewToggleButton(final VoidCallback toggleState) {
     },
     child: Icon(
       !isListView ? Icons.line_weight_rounded : Icons.grid_view,
-      color: primaryColor,
+      color: primaryColor.withOpacity(0.8),
     ),
   );
 }

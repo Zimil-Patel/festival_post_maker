@@ -32,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            //title and toggle button
             festivalListTitle(context, 'Festival list', toggleWidgetState),
+
+            //festivals lists box
             const FestivalListColumn(),
           ],
         ),
@@ -47,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //APPBAR
   AppBar appBar(BuildContext context) {
     return AppBar(
+      centerTitle: false,
       backgroundColor: secondaryColor,
       surfaceTintColor: bgColor,
       foregroundColor: bgColor,

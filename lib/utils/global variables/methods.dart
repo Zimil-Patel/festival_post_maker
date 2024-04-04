@@ -1,3 +1,4 @@
+import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,8 +20,15 @@ TextTheme textThemes() {
       ),
     ),
     titleLarge: GoogleFonts.varelaRound(
-      textStyle: const TextStyle(
-        fontSize: 22,
+      textStyle: TextStyle(
+        fontSize: screenHeigth / 34,
+        color: Colors.white,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+    displayLarge: GoogleFonts.varta(
+      textStyle: TextStyle(
+        fontSize: screenHeigth / 25,
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
