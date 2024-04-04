@@ -13,7 +13,7 @@ class PostMakerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: routes,
       theme: ThemeData(
         //global text properties

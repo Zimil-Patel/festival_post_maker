@@ -6,32 +6,34 @@ import 'package:google_fonts/google_fonts.dart';
 TextTheme textThemes() {
   return TextTheme(
     bodyLarge: GoogleFonts.varelaRound(
-      textStyle:  TextStyle(
-        fontSize: textSize!.scale(16),
+      textStyle:  const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
     ),
     bodyMedium: GoogleFonts.varelaRound(
-      textStyle:  TextStyle(
-        fontSize: textSize!.scale(12),
+      textStyle:  const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.w400,
       ),
     ),
     titleLarge: GoogleFonts.varelaRound(
-      textStyle: TextStyle(
+      textStyle: const TextStyle(
         color: Colors.white,
-        fontSize: textSize!.scale(20),
         fontWeight: FontWeight.w600,
       ),
     ),
-    displayLarge: GoogleFonts.varta(
-      textStyle: TextStyle(
-        fontSize: textSize!.scale(36),
+    displaySmall: GoogleFonts.varta(
+      textStyle: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
     ),
   );
+}
+
+
+//navigate to template view screen
+navigateToTemplateView({required BuildContext context}){
+  Navigator.of(context).pushNamed('/template');
 }

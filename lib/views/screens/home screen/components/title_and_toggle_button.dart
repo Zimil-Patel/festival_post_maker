@@ -18,7 +18,7 @@ Column festivalListTitle(
           children: [
             Text(
               '    $title',
-              style: Theme.of(context).textTheme.displayLarge!.copyWith(
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     color: primaryColor.withOpacity(0.6),
                     fontWeight: FontWeight.w900,
                   ),

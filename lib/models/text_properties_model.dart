@@ -10,15 +10,16 @@ class TextProperties {
 
   List<TextProperties> textObjList = [];
 
-  TextProperties(
-      {this.data,
-      this.top,
-      this.bottom,
-      this.left,
-      this.right,
-      this.size,
-      this.color,
-      this.fontWeight});
+  TextProperties({
+    this.data,
+    this.top,
+    this.bottom,
+    this.left,
+    this.right,
+    this.size,
+    this.color,
+    this.fontWeight,
+  });
 
   factory TextProperties.setData(Map map) => TextProperties(
         data: map['text'],

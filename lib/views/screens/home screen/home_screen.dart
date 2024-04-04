@@ -1,6 +1,6 @@
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:festival_post_maker/utils/global%20variables/variables.dart';
-import 'package:festival_post_maker/views/screens/home%20screen/components/app_bar.dart';
+import 'package:festival_post_maker/views/screens/home%20screen/components/home_app_bar.dart';
 import 'package:festival_post_maker/views/screens/home%20screen/components/festival_list_column.dart';
 import 'package:festival_post_maker/views/screens/home%20screen/components/festivals_list_grid.dart';
 import 'package:festival_post_maker/views/screens/home%20screen/components/floating_action_button.dart';
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
-    screenHeigth = MediaQuery.of(context).size.height;
+    screenHeight = MediaQuery.of(context).size.height;
     textSize = MediaQuery.of(context).textScaler;
     void toggleWidgetState() {
       setState(() {});

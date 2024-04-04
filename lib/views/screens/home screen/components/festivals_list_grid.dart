@@ -3,6 +3,8 @@ import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../utils/global variables/methods.dart';
+
 class FestivalListGrid extends StatelessWidget {
   const FestivalListGrid({
     super.key,
@@ -19,7 +21,9 @@ class FestivalListGrid extends StatelessWidget {
           festivalsList.length,
           (index) => CupertinoButton(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            onPressed: () {},
+            onPressed: () {
+              navigateToTemplateView(context: context);
+            },
             child: SizedBox(
               height: 178,
               width: 300,
