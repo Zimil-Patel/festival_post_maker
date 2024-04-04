@@ -1,6 +1,8 @@
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:festival_post_maker/views/screens/home%20screen/components/festival_list_column.dart';
+import 'package:festival_post_maker/views/screens/home%20screen/components/floating_action_button.dart';
+import 'package:festival_post_maker/views/screens/home%20screen/components/title_and_toggle_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +18,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeigth = MediaQuery.of(context).size.height;
+    void toggleWidgetState() {
+      setState(() {});
+    }
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -24,10 +29,18 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: appBar(context),
 
       //body of screen
-      body: const FestivalListColumn(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            festivalListTitle(context, 'Festival list', toggleWidgetState),
+            const FestivalListColumn(),
+          ],
+        ),
+      ),
 
       //floating action button
-      floatingActionButton: floatingActionButton(),
+      floatingActionButton:
+          floatingActionButton(toggleState: toggleWidgetState),
     );
   }
 
@@ -47,24 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       actions: [
         historyButton(),
-        listViewToggleButton(),
       ],
-    );
-  }
-
-  //LIST AND GRID VIEW TOGGLE BUTTON
-  CupertinoButton listViewToggleButton() {
-    return CupertinoButton(
-      padding: const EdgeInsets.only(right: 24),
-      onPressed: () {
-        setState(() {
-          isListView = !isListView;
-        });
-      },
-      child: Icon(
-        !isListView ? Icons.line_weight_rounded : Icons.grid_view,
-        color: bgColor,
-      ),
     );
   }
 
@@ -75,19 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
       onPressed: () {},
       child: Icon(
         Icons.history,
-        color: bgColor,
-      ),
-    );
-  }
-
-  //FLOATING ACTION BUTTON
-  FloatingActionButton floatingActionButton() {
-    return FloatingActionButton(
-      onPressed: () {},
-      backgroundColor: secondaryColor,
-      shape: const CircleBorder(),
-      child: Icon(
-        Icons.add,
         color: bgColor,
       ),
     );
