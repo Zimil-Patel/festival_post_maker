@@ -63,7 +63,7 @@ void showAlterDailogue(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Changes are not saved,\nSave chnages?',
+              'Do you want to exit?',
               style: Theme.of(context).textTheme.bodyLarge,
             )
           ],

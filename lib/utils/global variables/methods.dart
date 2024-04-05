@@ -1,7 +1,9 @@
 import 'package:festival_post_maker/models/post_model.dart';
+import 'package:festival_post_maker/views/screens/history%20page%20screen/history_page_screen.dart';
 import 'package:festival_post_maker/views/screens/template%20edit%20screen/template_edit_screen.dart';
 import 'package:festival_post_maker/views/screens/template%20view%20screen/template_view_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../models/text_model.dart';
@@ -42,7 +44,7 @@ TextTheme textThemes() {
         fontWeight: FontWeight.w600,
       ),
     ),
-    labelLarge:  GoogleFonts.varta(
+    labelLarge: GoogleFonts.varta(
       textStyle: const TextStyle(
         color: Colors.white,
         fontWeight: FontWeight.w600,
@@ -51,10 +53,8 @@ TextTheme textThemes() {
   );
 }
 
-
-
 //navigate to template view screen
-navigateToTemplateView({required BuildContext context,required int index}) {
+navigateToTemplateView({required BuildContext context, required int index}) {
   textList.add(sampleTextModel);
 
   //new text model object
@@ -70,12 +70,26 @@ navigateToTemplateView({required BuildContext context,required int index}) {
 
   //clear global text list
   textList.clear();
-  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TemplateViewScreen(postModel: postModel,),));
+  Navigator.of(context).pushReplacement(MaterialPageRoute(
+    builder: (context) => TemplateViewScreen(
+      postModel: postModel,
+    ),
+  ));
 }
 
-
+//navigate to histroy view screen
+navigateToHistoryView({required BuildContext context}) {
+  Navigator.of(context).pushReplacement(MaterialPageRoute(
+    builder: (context) => const HistoryScreen(),
+  ));
+}
 
 //navigate to template view screen
-navigateToEditTemplate({required BuildContext context,required PostModel postModel}) {
-  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TemplateEditScreen(postModel: postModel,),));
+navigateToEditTemplate(
+    {required BuildContext context, required PostModel postModel}) {
+  Navigator.of(context).pushReplacement(MaterialPageRoute(
+    builder: (context) => TemplateEditScreen(
+      postModel: postModel,
+    ),
+  ));
 }
