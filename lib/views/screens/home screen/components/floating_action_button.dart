@@ -21,7 +21,7 @@ FloatingActionButton floatingActionButton({
 
       //new post model object
       PostModel postModel = PostModel(
-          festivalName: null,
+          festivalName: 'Custom',
           bgColor: Colors.white,
           imgPath: 'assets/images/predefined/img1.png',
           textModel: textModel);
