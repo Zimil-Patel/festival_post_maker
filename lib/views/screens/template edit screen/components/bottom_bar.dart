@@ -166,8 +166,6 @@ class BottomBar extends StatelessWidget {
             "${directory.path}/flutter/${DateTime.now().millisecondsSinceEpoch}.png");
         fileImg.createSync(recursive: true);
 
-        print('${fileImg.path} -------------------------');
-
         fileImg.writeAsBytesSync(imgData);
 
         await ShareExtend.share(fileImg.path, 'FesetivalPost');

@@ -1,8 +1,6 @@
 import 'package:festival_post_maker/models/post_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../../utils/global lists/shadow_list.dart';
 import '../../../../utils/global variables/variables.dart';
 

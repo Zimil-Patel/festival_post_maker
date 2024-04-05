@@ -3,9 +3,7 @@ import 'package:festival_post_maker/views/screens/history%20page%20screen/histor
 import 'package:festival_post_maker/views/screens/template%20edit%20screen/template_edit_screen.dart';
 import 'package:festival_post_maker/views/screens/template%20view%20screen/template_view_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../models/text_model.dart';
 import '../global lists/festivals_list.dart';
 import '../global lists/images_paths_list.dart';

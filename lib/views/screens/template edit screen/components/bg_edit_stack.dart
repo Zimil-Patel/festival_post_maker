@@ -1,7 +1,6 @@
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../../models/post_model.dart';
 import '../../../../utils/global variables/variables.dart';
@@ -34,7 +33,6 @@ class BackgroundEditStack extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               closeStackButton(),
-
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,12 +45,9 @@ class BackgroundEditStack extends StatelessWidget {
                       },
                       child: Text(
                         'Images',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(
-                          color: isImageTab ? Colors.amber : null,
-                        ),
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: isImageTab ? Colors.amber : null,
+                            ),
                       ),
                     ),
                     CupertinoButton(
@@ -63,12 +58,9 @@ class BackgroundEditStack extends StatelessWidget {
                       },
                       child: Text(
                         'Colors',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(
-                          color: isImageTab ? null : Colors.amber,
-                        ),
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: isImageTab ? null : Colors.amber,
+                            ),
                       ),
                     ),
                   ],
@@ -78,7 +70,11 @@ class BackgroundEditStack extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 7.0, vertical: 7),
-            child: isImageTab ? BackGroundImageScrollView(postModel: postModel, toggleState: toggleState) : BackGroundColorScrollView(postModel: postModel, toggleState: toggleState),
+            child: isImageTab
+                ? BackGroundImageScrollView(
+                    postModel: postModel, toggleState: toggleState)
+                : BackGroundColorScrollView(
+                    postModel: postModel, toggleState: toggleState),
           ),
         ],
       ),
@@ -87,20 +83,24 @@ class BackgroundEditStack extends StatelessWidget {
 
   CupertinoButton closeStackButton() {
     return CupertinoButton(
-              padding: EdgeInsets.zero,
-              onPressed: () {
-                stackIndex = 0;
-                toggleState();
-              },
-              child: Container(
-                margin: const EdgeInsets.only(left: 30),
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  color: primaryColor,
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.close_rounded, size: 16, color: Colors.grey.withOpacity(0.4),),
-              ),
-            );
+      padding: EdgeInsets.zero,
+      onPressed: () {
+        stackIndex = 0;
+        toggleState();
+      },
+      child: Container(
+        margin: const EdgeInsets.only(left: 30),
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          color: primaryColor,
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          Icons.close_rounded,
+          size: 16,
+          color: Colors.grey.withOpacity(0.4),
+        ),
+      ),
+    );
   }
 }
