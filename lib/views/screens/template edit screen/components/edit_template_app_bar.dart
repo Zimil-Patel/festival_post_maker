@@ -24,9 +24,10 @@ AppBar editTemplateAppBar({
     leading: CupertinoButton(
         padding: EdgeInsets.zero,
         onPressed: () {
-          isFromHistory = false;
-          isBlankTemplate = false;
-          Navigator.pushReplacementNamed(context, '/home');
+          showAlterDailogue(
+              context: context,
+              postModel: postModel,
+              toggleState: togglesState);
         },
         child: Icon(
           Icons.close,
@@ -37,40 +38,107 @@ AppBar editTemplateAppBar({
       style: Theme.of(context).textTheme.titleLarge,
     ),
     actions: [
-      downloadButton(context: context, postModel: postModel, toggleState: togglesState),
+      restAndSaveButton(
+          context: context, postModel: postModel, toggleState: togglesState),
     ],
   );
 }
 
-//POST HISTORY VIEW BUTTON
-Row downloadButton({required BuildContext context, required PostModel postModel, required VoidCallback toggleState}) {
+void showAlterDailogue(
+    {required BuildContext context,
+    required PostModel postModel,
+    required final VoidCallback toggleState}) {
+  showDialog(
+    context: context, barrierDismissible: true, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        backgroundColor: secondaryColor,
+        elevation: 1,
+        title: Text(
+          'Alert?',
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Changes are not saved,\nSave chnages?',
+              style: Theme.of(context).textTheme.bodyLarge,
+            )
+          ],
+        ),
+        actions: <Widget>[
+          TextButton(
+              child: Text(
+                'No',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.amber),
+              ),
+              onPressed: () {
+                isFromHistory = false;
+                isBlankTemplate = false;
+                Navigator.pushReplacementNamed(context, '/home');
+              }),
+          TextButton(
+              child: Text(
+                'Yes',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.amber),
+              ),
+              onPressed: () {
+                if (isFromHistory) {
+                  postList[postIndex] = postModel;
+                } else {
+                  postList.add(postModel);
+                  postIndex = postList.length - 1;
+                  isFromHistory = true;
+                }
+                Navigator.pushReplacementNamed(context, '/home');
+              }),
+        ],
+      );
+    },
+  );
+}
+
+//POST download button
+Row restAndSaveButton(
+    {required BuildContext context,
+    required PostModel postModel,
+    required VoidCallback toggleState}) {
   return Row(
     children: [
       CupertinoButton(
-          onPressed: () {
-            postModel.imgPath = isBlankTemplate ? 'assets/images/predefined/img1.png' : 'assets/images/festivals/${(postModel.festivalName)!.toLowerCase()}/img1.png';
-            postModel.bgColor = isBlankTemplate ? Colors.white : null;
-            postModel.textModel!.textObjList.clear();
-            toggleState();
-          },
-          padding: EdgeInsets.zero,
-          child: Text(
-            'Reset',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),),
+        onPressed: () {
+          postModel.imgPath = isBlankTemplate
+              ? 'assets/images/predefined/img1.png'
+              : 'assets/images/festivals/${(postModel.festivalName)!.toLowerCase()}/img1.png';
+          postModel.bgColor = isBlankTemplate ? Colors.white : null;
+          postModel.textModel!.textObjList.clear();
+          toggleState();
+        },
+        padding: EdgeInsets.zero,
+        child: Text(
+          'Reset',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
       const SizedBox(
         width: 8,
       ),
       CupertinoButton(
         onPressed: () {
-          if(isFromHistory){
+          if (isFromHistory) {
             postList[postIndex] = postModel;
-            print("Updated! at $postIndex");
           } else {
             postList.add(postModel);
             postIndex = postList.length - 1;
             isFromHistory = true;
-            print('Saved at $postIndex');
           }
         },
         padding: EdgeInsets.zero,
