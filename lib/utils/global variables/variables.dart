@@ -24,3 +24,6 @@ TextEditingController txtEdit = TextEditingController();
 //Font size sldier range
 double value = 30;
 double weightValue = 600;
+
+int postcount = 1;
+GlobalKey imgKey = GlobalKey();

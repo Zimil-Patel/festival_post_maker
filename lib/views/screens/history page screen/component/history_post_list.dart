@@ -8,8 +8,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PostHistoryList extends StatelessWidget {
+  final VoidCallback togglState;
   const PostHistoryList({
     super.key,
+    required this.togglState,
   });
 
   @override
@@ -22,9 +24,12 @@ class PostHistoryList extends StatelessWidget {
             padding: EdgeInsets.zero,
             onPressed: () {
               isFromHistory = true;
+              postIndex = index;
               //navigate with arguments
               navigateToEditTemplate(
-                  context: context, postModel: postList[index]);
+                context: context,
+                postModel: postList[index],
+              );
             },
             //box of festival name and image
             child: Container(
@@ -60,7 +65,7 @@ class PostHistoryList extends StatelessWidget {
                               children: [
                                 //festival Name
                                 Text(
-                                  'Post ${index + 1}',
+                                  'Poster',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyLarge!
@@ -122,10 +127,17 @@ class PostHistoryList extends StatelessWidget {
                           shape: BoxShape.circle,
                           color: bgColor,
                         ),
-                        child: Icon(
-                          Icons.remove_red_eye_rounded,
-                          color: primaryTextColor,
-                          size: 30,
+                        child: CupertinoButton(
+                          onPressed: () {
+                            postList.removeAt(index);
+                            togglState();
+                          },
+                          padding: EdgeInsets.zero,
+                          child: Icon(
+                            Icons.delete,
+                            color: primaryTextColor,
+                            size: 30,
+                          ),
                         ),
                       ),
                     ),

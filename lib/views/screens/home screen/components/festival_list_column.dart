@@ -6,7 +6,6 @@ import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class FestivalListColumn extends StatelessWidget {
   const FestivalListColumn({
     super.key,
@@ -21,6 +20,7 @@ class FestivalListColumn extends StatelessWidget {
           (index) => CupertinoButton(
             padding: EdgeInsets.zero,
             onPressed: () {
+              isFromHistory = false;
               //navigate with arguments
               navigateToTemplateView(context: context, index: index);
             },

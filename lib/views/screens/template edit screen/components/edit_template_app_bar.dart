@@ -2,6 +2,7 @@
 
 import 'package:festival_post_maker/utils/global%20lists/model_list.dart';
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
+import 'package:festival_post_maker/utils/global%20variables/methods.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -78,9 +79,7 @@ void showAlterDailogue(
                     .copyWith(color: Colors.amber),
               ),
               onPressed: () {
-                isFromHistory = false;
-                isBlankTemplate = false;
-                Navigator.pushReplacementNamed(context, '/home');
+                Navigator.pop(context);
               }),
           TextButton(
               child: Text(
@@ -91,14 +90,22 @@ void showAlterDailogue(
                     .copyWith(color: Colors.amber),
               ),
               onPressed: () {
+                const snackBar = SnackBar(
+                  duration: Duration(seconds: 1),
+                  content: Text('Saved!'),
+                );
+
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
                 if (isFromHistory) {
+                  isFromHistory = false;
                   postList[postIndex] = postModel;
+                  navigateToHistoryView(context: context);
                 } else {
                   postList.add(postModel);
                   postIndex = postList.length - 1;
-                  isFromHistory = true;
+                  Navigator.pushReplacementNamed(context, '/home');
                 }
-                Navigator.pushReplacementNamed(context, '/home');
               }),
         ],
       );
@@ -140,6 +147,13 @@ Row restAndSaveButton(
             postIndex = postList.length - 1;
             isFromHistory = true;
           }
+
+          const snackBar = SnackBar(
+            duration: Duration(seconds: 1),
+            content: Text('Saved!'),
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         padding: EdgeInsets.zero,
         child: Icon(

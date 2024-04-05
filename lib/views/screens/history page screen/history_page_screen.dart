@@ -35,7 +35,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 recents(context, 'Recents Post'),
 
                 //festivals lists box
-                PostHistoryList(),
+                PostHistoryList(
+                  togglState: toggleWidgetState,
+                ),
               ],
             ),
           ],

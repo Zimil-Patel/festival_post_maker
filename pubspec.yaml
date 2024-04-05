@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_colorpicker: ^1.0.3
+  image_gallery_saver: any
+  share_extend: any
+  path_provider: any
 
 dev_dependencies:
   flutter_test:

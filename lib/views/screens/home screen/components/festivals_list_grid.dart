@@ -1,5 +1,6 @@
 import 'package:festival_post_maker/utils/global%20lists/festivals_list.dart';
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
+import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../utils/global lists/shadow_list.dart';
@@ -14,6 +15,7 @@ class FestivalListGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.extent(
       maxCrossAxisExtent: 300,
+      shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
         ...List.generate(
@@ -21,7 +23,7 @@ class FestivalListGrid extends StatelessWidget {
           (index) => CupertinoButton(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             onPressed: () {
-
+              isFromHistory = false;
               //navigate with arguments
               navigateToTemplateView(context: context, index: index);
             },
