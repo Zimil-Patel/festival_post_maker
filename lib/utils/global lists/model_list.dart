@@ -12,7 +12,8 @@ List<PostModel> postList = [
 Map sampleTextModel = {
   'text': 'This is sample text',
   'top': 180.0,
-  'left': 70.0,
+  'left': 10.0,
+  'right': 10.0,
   'size': 30.0,
   'color': Colors.black,
   'fontWeight': FontWeight.w700,

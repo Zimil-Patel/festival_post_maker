@@ -20,6 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
     isBlankTemplate = false;
     isFromHistory = false;
     stackIndex = 0;
+    selectedTextIndex = null;
+    isImageTab = true;
+    isTextTab = true;
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
     void toggleWidgetState() {

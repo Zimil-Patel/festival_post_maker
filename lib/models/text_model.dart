@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class TextModel {
   String? text, fontFamily;
-  double? top, left;
+  double? top, left, right;
   double? size;
   Color? color;
   FontWeight? fontWeight;
@@ -14,6 +14,7 @@ class TextModel {
     this.text,
     this.top,
     this.left,
+    this.right,
     this.size,
     this.color,
     this.fontWeight,
@@ -24,6 +25,7 @@ class TextModel {
         text: map['text'],
         top: map['top'],
         left: map['left'],
+        right: map['right'],
         size: map['size'],
         color: map['color'],
         fontWeight: map['fontWeight'],
@@ -38,6 +40,7 @@ class TextModel {
         text: text,
         top: top,
         left: left,
+        right: right,
         size: size,
         color: color,
         fontWeight: fontWeight,

@@ -47,12 +47,14 @@ Column postBox(
                       (index) => Positioned(
                         top: postModel.textModel!.textObjList[index].top,
                         left: postModel.textModel!.textObjList[index].left,
+                        right: postModel.textModel!.textObjList[index].right,
                         child: GestureDetector(
                           onTap: () {
                             selectedTextIndex = index;
                             toggleState();
                           },
                           child: Container(
+                            padding: const EdgeInsets.all(3),
                             decoration: BoxDecoration(
                               border: Border.all(
                                   width: 2.5,
