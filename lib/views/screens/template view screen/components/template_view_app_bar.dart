@@ -20,7 +20,10 @@ AppBar templateAppBar({
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/home');
         },
-        child: Icon(Icons.arrow_back, color: bgColor,)),
+        child: Icon(
+          Icons.arrow_back,
+          color: bgColor,
+        )),
     title: Text(
       'Template',
       style: Theme.of(context).textTheme.titleLarge,

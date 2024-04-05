@@ -1,6 +1,5 @@
 //FLOATING ACTION BUTTON
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../models/post_model.dart';
@@ -29,7 +28,11 @@ FloatingActionButton floatingActionButton({
 
       //clear global text list
       textList.clear();
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => TemplateViewScreen(postModel: postModel,),));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => TemplateViewScreen(
+          postModel: postModel,
+        ),
+      ));
     },
     backgroundColor: secondaryColor,
     shape: const CircleBorder(),

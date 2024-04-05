@@ -45,15 +45,7 @@ class DeleteAddColor extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: () {
           if (selectedTextIndex != null) {
-            // create some values
-            Color pickerColor = const Color(0xff443a49);
-
-            void changeColor(Color color) {
-              pickerColor = color;
-              toggleState();
-            }
-
-            showColorPicker(context, pickerColor, changeColor);
+            showColorPicker(context);
             toggleState();
           }
         },
@@ -99,9 +91,12 @@ class DeleteAddColor extends StatelessWidget {
       alignment: Alignment.center,
       child: CupertinoButton(
         onPressed: () {
-          if(selectedTextIndex != null){
-            txtEdit = TextEditingController(text: postModel.textModel!.textObjList[selectedTextIndex!].text);
-            showAddTextDialogue(context: context, title: 'Edit Text', controller: txtEdit);
+          if (selectedTextIndex != null) {
+            txtEdit = TextEditingController(
+                text:
+                    postModel.textModel!.textObjList[selectedTextIndex!].text);
+            showAddTextDialogue(
+                context: context, title: 'Edit Text', controller: txtEdit);
           }
         },
         child: Column(
@@ -137,7 +132,8 @@ class DeleteAddColor extends StatelessWidget {
         onPressed: () {
           selectedTextIndex = null;
           toggleState();
-          showAddTextDialogue(context: context, title: 'Add Text', controller: txtAdd);
+          showAddTextDialogue(
+              context: context, title: 'Add Text', controller: txtAdd);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -196,8 +192,14 @@ class DeleteAddColor extends StatelessWidget {
     );
   }
 
-  Future<dynamic> showColorPicker(
-      BuildContext context, Color pickerColor, void changeColor(Color color)) {
+  Future<dynamic> showColorPicker(BuildContext context) {
+    Color pickerColor = const Color(0xff443a49);
+
+    void changeColor(Color color) {
+      pickerColor = color;
+      toggleState();
+    }
+
     return showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
@@ -235,7 +237,10 @@ class DeleteAddColor extends StatelessWidget {
     );
   }
 
-  showAddTextDialogue({required BuildContext context, required String title, required TextEditingController controller}) {
+  showAddTextDialogue(
+      {required BuildContext context,
+      required String title,
+      required TextEditingController controller}) {
     return showDialog<void>(
       context: context,
       barrierDismissible: true, // user must tap button!
@@ -266,17 +271,18 @@ class DeleteAddColor extends StatelessWidget {
                     .copyWith(color: Colors.amber),
               ),
               onPressed: () {
-
-                if(selectedTextIndex != null){
-                  postModel.textModel!.textObjList[selectedTextIndex!].text = controller.text;
+                if (selectedTextIndex != null) {
+                  postModel.textModel!.textObjList[selectedTextIndex!].text =
+                      controller.text;
                 } else {
                   TextModel txt = TextModel(
                       text: txtAdd.text,
                       top: 180.0,
-                      left: 70.0,
+                      left: 10.0,
+                      right: 10.0,
                       size: 30.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
                       fontFamily: 'Pacifico');
                   postModel.textModel!.textObjList.add(txt);
                   txtAdd = TextEditingController(text: 'Enter Your Text');

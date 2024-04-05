@@ -1,6 +1,4 @@
-
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 double screenWidth = 0;
 double screenHeight = 0;
@@ -17,8 +15,12 @@ bool isFontFamilyTab = true;
 int? selectedTextIndex = null;
 int stackIndex = 0;
 int postIndex = 0;
-
+int fontStackIndex = 0;
 
 //TextEditing controller
 TextEditingController txtAdd = TextEditingController(text: 'Enter Your Text');
 TextEditingController txtEdit = TextEditingController();
+
+//Font size sldier range
+double value = 30;
+double weightValue = 600;
