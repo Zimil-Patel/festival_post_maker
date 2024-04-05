@@ -34,7 +34,20 @@ A new Flutter project.
 <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/28-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/29-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/30-portrait.png" width = "240" height = "500">
 
 
-<img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/31-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/32-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/33-portrait.png" width = "240" height = "500">
+<img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/32-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/33-portrait.png" width = "240" height = "500"> &nbsp;&nbsp;&nbsp;&nbsp; <img src = "https://github.com/Zimil-Patel/festival_post_maker/blob/master/mockups/31-portrait.png" width = "240" height = "500">
+
+
+
+
+https://github.com/Zimil-Patel/festival_post_maker/assets/112332000/71fdbbfe-4eb0-4f3e-bd98-ccedcab1b197.mp4
+
+
+
+https://github.com/Zimil-Patel/festival_post_maker/assets/112332000/5cd81451-c43d-4723-adfa-9427f376c3f8.mp4
+
+
+
+
 
 
 
