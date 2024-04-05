@@ -122,6 +122,7 @@ Row restAndSaveButton(
     children: [
       CupertinoButton(
         onPressed: () {
+          selectedTextIndex = null;
           postModel.imgPath = isBlankTemplate
               ? 'assets/images/predefined/img1.png'
               : 'assets/images/festivals/${(postModel.festivalName)!.toLowerCase()}/img1.png';

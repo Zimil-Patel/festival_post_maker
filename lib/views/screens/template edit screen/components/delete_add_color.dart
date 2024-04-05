@@ -249,7 +249,7 @@ class DeleteAddColor extends StatelessWidget {
           backgroundColor: secondaryColor,
           elevation: 1,
           title: Text(
-            '$title Text',
+            title,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           content: SingleChildScrollView(

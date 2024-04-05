@@ -1,4 +1,5 @@
 import 'package:festival_post_maker/utils/global%20variables/colors.dart';
+import 'package:festival_post_maker/utils/global%20variables/variables.dart';
 import 'package:festival_post_maker/views/screens/history%20page%20screen/component/history_post_list.dart';
 import 'package:festival_post_maker/views/screens/history%20page%20screen/component/history_screen_app_bar.dart';
 import 'package:festival_post_maker/views/screens/history%20page%20screen/component/recents_title.dart';
@@ -15,6 +16,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   TextScaler? textSize;
   @override
   Widget build(BuildContext context) {
+    selectedTextIndex = null;
     textSize = MediaQuery.of(context).textScaler;
 
     void toggleWidgetState() {

@@ -107,6 +107,7 @@ class BottomBar extends StatelessWidget {
   CupertinoButton saveBtn(BuildContext context) {
     return CupertinoButton(
       onPressed: () async {
+        selectedTextIndex = null;
         RenderRepaintBoundary boudary =
             imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
 
@@ -150,6 +151,7 @@ class BottomBar extends StatelessWidget {
   CupertinoButton shareBtn(BuildContext context) {
     return CupertinoButton(
       onPressed: () async {
+        selectedTextIndex = null;
         final boudary =
             imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
 
