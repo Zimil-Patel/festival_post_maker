@@ -6,6 +6,7 @@ import '../../../../models/post_model.dart';
 import '../../../../utils/global variables/colors.dart';
 import '../../../../utils/global variables/variables.dart';
 import 'bg_edit_stack.dart';
+import 'font_style_edit_stack.dart';
 
 class BottomBar extends StatelessWidget {
   final VoidCallback toggleState;
@@ -47,6 +48,10 @@ class BottomBar extends StatelessWidget {
 
               //STACK 2 - TEXT
               TextEditingStack(toggleState: toggleState, postModel: postModel),
+
+
+              //STACK 3 - FONT
+              FontStyleEditingStack(toggleState: toggleState, postModel: postModel),
             ],
           ),
 

@@ -11,6 +11,7 @@ bool isFromHistory = false;
 bool isBlankTemplate = false;
 bool isImageTab = true;
 bool isTextTab = true;
+bool isFontFamilyTab = true;
 
 //int
 int? selectedTextIndex = null;

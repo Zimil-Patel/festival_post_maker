@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import '../../../../models/post_model.dart';
 import '../../../../utils/global variables/variables.dart';
 
-class TextEditingStack extends StatelessWidget {
-  const TextEditingStack({
+class FontStyleEditingStack extends StatelessWidget {
+  const FontStyleEditingStack({
     super.key,
     required this.postModel,
     required this.toggleState,
@@ -45,52 +45,52 @@ class TextEditingStack extends StatelessWidget {
 
   Row textEditTabBar(BuildContext context) {
     return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            closeStackButton(),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CupertinoButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      isTextTab = true;
-                      toggleState();
-                    },
-                    child: Text(
-                      'Edit Text',
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(
-                        color: isTextTab ? Colors.amber : null,
-                      ),
-                    ),
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        closeStackButton(),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  isFontFamilyTab = true;
+                  toggleState();
+                },
+                child: Text(
+                  'Font Family',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(
+                    color: isFontFamilyTab ? Colors.amber : null,
                   ),
-                  CupertinoButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () {
-                      isTextTab = false;
-                      toggleState();
-                    },
-                    child: Text(
-                      'Align Text',
-                      style: Theme
-                          .of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(
-                        color: isTextTab ? null : Colors.amber,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
-        );
+              CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  isFontFamilyTab = false;
+                  toggleState();
+                },
+                child: Text(
+                  'Font Size',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(
+                    color: isFontFamilyTab ? null : Colors.amber,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 
   CupertinoButton closeStackButton() {
